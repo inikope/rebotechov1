@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
     const tutorVid = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/videoig (link post instagram)"};
     const tutorStory = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/storyig (username instagram)"};
     const tutorCek = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/cekig (username instagram)"};
-    const errormess = { type: 'text', text:"Terima kasih atas pesannya\nSayang sekali, akun ini masih goblok(hm)"};
+    const errormess = { type: 'text', text:"Terima kasih atas pesannya\nSayang sekali, akun ini masih goblok"};
     const sendIntro = { type: 'text', text: "RE:BOT dapat melakukan beberapa hal loh..\nCoba yuk!\nKetik /help untuk melihat command."};
 
     if (event.type !== 'message' || event.message.type !== 'text') {
