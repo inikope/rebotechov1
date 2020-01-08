@@ -82,7 +82,7 @@ app.get('/', (req, res) => {
                     return client.replyMessage(event.replyToken, tutorCek);
                     break;
                 default:
-                    return client.replyMessage(event.replyToken, errormess);
+                    return client.replyMessage(event.replyToken, sendIntro);
                     break;
             }
         }
