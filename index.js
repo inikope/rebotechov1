@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
     const tutorStory = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/storyig (username instagram)"};
     const tutorCek = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/cekig (username instagram)"};
     const errormess = { type: 'text', text:"Terima kasih atas pesannya\nSayang sekali, akun ini masih goblok"};
-    const sendIntro = { type: 'text', text: "RE:BOT dapat melakukan beberapa hal loh..\nCoba yuk!\nKetik /help untuk melihat command-command yang kami punya.\n\n\u2B51"};
+    const sendIntro = { type: 'text', text: "RE:BOT dapat melakukan beberapa hal loh..\nCoba yuk!\nKetik /help untuk melihat command-command yang kami punya.\n\n\u2605"};
     const aboutMe = { type: 'text', text: "RE:BOT adalah adalah chatbot yang dapat membantumu menyimpan foto maupun video dari Instagram.\n\nRE:BOT dibuat oleh:\n- [2201801636] Hans Nugroho Gianto Hadiwijaya\n- [2201758285] Casandra\n- [2201787915] Mita\n\n\n\uD83C\uDF6C"};
      
     if (event.type !== 'message' || event.message.type !== 'text') {
