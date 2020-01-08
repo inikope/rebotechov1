@@ -81,18 +81,6 @@ app.get('/', (req, res) => {
 		case '/echo':
 		    return replyText(event.replyToken, link);
 		    break;
-		case '/bye':
-		      switch (source.type) {
-        		case 'user':
-        			return replyText(replyToken, 'Bot can\'t leave from 1:1 chat');
-		        case 'group':
-        			return replyText(replyToken, 'Leaving group')
-            			.then(() => client.leaveGroup(source.groupId));
-		        case 'room':
-          			return replyText(replyToken, 'Leaving room')
-          			.then(() => client.leaveRoom(source.roomId));
-		      }
-			break;
                 default:
                     return replyText(event.replyToken, errormess);
                     break;
