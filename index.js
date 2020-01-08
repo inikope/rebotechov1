@@ -49,16 +49,16 @@ app.get('/', (req, res) => {
             const link = Number(splittedText[1]);
             switch (inicommand) {
                 case '/videoig':
-                    return client.replyMessage(event.replyToken, errormess);
+                    return client.replyMessage(event.replyToken, tutorVid);
                     break;
                 case '/fotoig':
-                    return client.replyMessage(event.replyToken, errormess);
+                    return client.replyMessage(event.replyToken, tutorFoto);
                     break;
                 case '/storyig':
-                    return client.replyMessage(event.replyToken, errormess);
+                    return client.replyMessage(event.replyToken, tutorStory);
                     break;
                 case '/cekig':
-                    return client.replyMessage(event.replyToken, errormess);
+                    return client.replyMessage(event.replyToken, tutorCek);
                     break;
                 default:
                     return client.replyMessage(event.replyToken, errormess);
