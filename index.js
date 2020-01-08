@@ -30,12 +30,18 @@ app.get('/', (req, res) => {
   
   // event handler
   function handleEvent(event) {
-    const sendHelp = { type: 'text', text:"RE:BOT dapat melakukan beberapa hal loh...\nCoba yuk command-command RE:BOT berikut ini!\n\n\n/𝐡𝐞𝐥𝐩 - Untuk melihat command yang kami punya\n/𝐯𝐢𝐝𝐞𝐨𝐢𝐠 - Untuk menyimpan video dari instagram\n/𝐟𝐨𝐭𝐨𝐢𝐠 - Untuk menyimpan foto dari instagram\n/𝐜𝐞𝐤𝐢𝐠 - Untuk mengecek profil instagram\n/𝐬𝐭𝐨𝐫𝐲𝐢𝐠 - Untuk menyimpan foto atau video dari instastory\n\n\n(star)"};
+     
+     // Emojis
+     const emoj_star = String.valueOf(Character.toChars(Integer.decode("0x1000B2")));
+     const emoj_blush = String.valueOf(Character.toChars(Integer.decode("0x100017")));
+     
+     //  Chats
+    const sendHelp = { type: 'text', text:"RE:BOT dapat melakukan beberapa hal loh...\nCoba yuk command-command RE:BOT berikut ini!\n\n\n/𝐡𝐞𝐥𝐩 - Untuk melihat command yang kami punya\n/𝐯𝐢𝐝𝐞𝐨𝐢𝐠 - Untuk menyimpan video dari instagram\n/𝐟𝐨𝐭𝐨𝐢𝐠 - Untuk menyimpan foto dari instagram\n/𝐜𝐞𝐤𝐢𝐠 - Untuk mengecek profil instagram\n/𝐬𝐭𝐨𝐫𝐲𝐢𝐠 - Untuk menyimpan foto atau video dari instastory\n\n\n"+ emoj_star};
     const tutorFoto = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/fotoig (link post instagram)"};
     const tutorVid = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/videoig (link post instagram)"};
     const tutorStory = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/storyig (username instagram)"};
     const tutorCek = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/cekig (username instagram)"};
-    const errormess = { type: 'text', text:"Terima kasih atas pesannya(blush)\nSayang sekali, akun ini masih goblok(hm)"};
+    const errormess = { type: 'text', text:"Terima kasih atas pesannya "+ emoj_blush + "\nSayang sekali, akun ini masih goblok(hm)"+ emoj_blush};
     const sendIntro = { type: 'text', text: "RE:BOT dapat melakukan beberapa hal loh..\nCoba yuk!\nKetik /help untuk melihat command."};
 
     if (event.type !== 'message' || event.message.type !== 'text') {
