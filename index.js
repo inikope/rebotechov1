@@ -78,6 +78,9 @@ app.get('/', (req, res) => {
                 case '/cekig':
                     return replyText(event.replyToken, tutorCek);
                     break;
+		case '/echo':
+		    return replyText(event.replyToken, link);
+		    break;
                 default:
                     return replyText(event.replyToken, errormess);
                     break;
