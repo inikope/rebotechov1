@@ -49,42 +49,32 @@ app.get('/', (req, res) => {
             const link = Number(splittedText[1]);
             switch (inicommand) {
                 case '/videoig':
-                    return client.replyMessage(event.replyToken, tutorVid);
+                    return client.replyMessage(event.replyToken, errormess);
                     break;
                 case '/fotoig':
-                    return client.replyMessage(event.replyToken, tutorFoto);
+                    return client.replyMessage(event.replyToken, errormess);
                     break;
                 case '/storyig':
-                    return client.replyMessage(event.replyToken, tutorStory);
+                    return client.replyMessage(event.replyToken, errormess);
                     break;
                 case '/cekig':
-                    return client.replyMessage(event.replyToken, tutorCek);
+                    return client.replyMessage(event.replyToken, errormess);
                     break;
                 default:
                     return client.replyMessage(event.replyToken, errormess);
                     break;
             }
         } else {
-            switch (receivedMessage) {
-                case '/help':
-                    return client.replyMessage(event.replyToken, sendHelp);
-                    break;
-                case '/videoig':
-                    return client.replyMessage(event.replyToken, tutorVid);
-                    break;
-                case '/fotoig':
-                    return client.replyMessage(event.replyToken, tutorFoto);
-                    break;
-                case '/storyig':
-                    return client.replyMessage(event.replyToken, tutorStory);
-                    break;
-                case '/cekig':
-                    return client.replyMessage(event.replyToken, tutorCek);
-                    break;
-                default:
-                    return client.replyMessage(event.replyToken, sendIntro);
-                    break;
-            }
+            if (receivedMessage.equals("/help")){
+                return client.replyMessage(event.replyToken, sendHelp);
+            } else if (receivedMessage.equals("/videoig")) {
+                return client.replyMessage(event.replyToken, tutorVid);
+            } else if (receivedMessage.equals("/fotoig")) {
+                return client.replyMessage(event.replyToken, tutorFoto);
+            } else if (receivedMessage.equals("/cekig")) {
+                return client.replyMessage(event.replyToken, tutorCek);
+            } else if (receivedMessage.equals("/storyig")) {
+                return client.replyMessage(event.replyToken, tutorStory);
         }
     }
   }
