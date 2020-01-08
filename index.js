@@ -33,14 +33,15 @@ app.get('/', (req, res) => {
      
      // Emojis     
      //  Chats
-    const sendHelp = { type: 'text', text:"RE:BOT dapat melakukan beberapa hal loh...\nCoba yuk command-command RE:BOT berikut ini!\n\n\n/𝐡𝐞𝐥𝐩 - Untuk melihat command yang kami punya\n/𝐯𝐢𝐝𝐞𝐨𝐢𝐠 - Untuk menyimpan video dari instagram\n/𝐟𝐨𝐭𝐨𝐢𝐠 - Untuk menyimpan foto dari instagram\n/𝐜𝐞𝐤𝐢𝐠 - Untuk mengecek profil instagram\n/𝐬𝐭𝐨𝐫𝐲𝐢𝐠 - Untuk menyimpan foto atau video dari instastory\n\n\n\u2665"};
+    const sendHelp = { type: 'text', text:"RE:BOT dapat melakukan beberapa hal loh...\nCoba yuk command-command RE:BOT berikut ini!\n\n\n/𝐡𝐞𝐥𝐩 - Untuk melihat command yang kami punya\n/𝐯𝐢𝐝𝐞𝐨𝐢𝐠 - Untuk menyimpan video dari instagram\n/𝐟𝐨𝐭𝐨𝐢𝐠 - Untuk menyimpan foto dari instagram\n/𝐜𝐞𝐤𝐢𝐠 - Untuk mengecek profil instagram\n/𝐬𝐭𝐨𝐫𝐲𝐢𝐠 - Untuk menyimpan foto atau video dari instastory\n/𝐚𝐛𝐨𝐮𝐭 - Untuk mengetahui lebih lanjut tentang RE:BOT\n\n\n\u2665"};
     const tutorFoto = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/fotoig (link post instagram)"};
     const tutorVid = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/videoig (link post instagram)"};
     const tutorStory = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/storyig (username instagram)"};
     const tutorCek = { type: 'text', text:"Begini nih cara menggunakan commandnya\n\n/cekig (username instagram)"};
     const errormess = { type: 'text', text:"Terima kasih atas pesannya\nSayang sekali, akun ini masih goblok"};
-    const sendIntro = { type: 'text', text: "RE:BOT dapat melakukan beberapa hal loh..\nCoba yuk!\nKetik /help untuk melihat command."};
-
+    const sendIntro = { type: 'text', text: "RE:BOT dapat melakukan beberapa hal loh..\nCoba yuk!\nKetik /help untuk melihat command-command yang kami punya."};
+    const aboutMe = { type: 'text', text: "RE:BOT adalah adalah chatbot yang dapat membantumu menyimpan foto maupun video dari Instagram.\n\nRE:BOT dibuat oleh:\n- [2201801636] Hans Nugroho Gianto Hadiwijaya\n- [2201758285] Casandra\n- [2201787915] Mita\n\n\n\u2665"};
+     
     if (event.type !== 'message' || event.message.type !== 'text') {
       // ignore non-text-message event
       return client.replyMessage(event.replyToken, sendIntro);
@@ -83,6 +84,9 @@ app.get('/', (req, res) => {
                     break;
                 case '/cekig':
                     return client.replyMessage(event.replyToken, tutorCek);
+                    break;
+                case '/about':
+                    return client.replyMessage(event.replyToken, aboutMe);
                     break;
                 default:
                     return client.replyMessage(event.replyToken, sendIntro);
