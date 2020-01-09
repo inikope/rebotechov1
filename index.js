@@ -42,13 +42,14 @@ app.get('/', (req, res) => {
   // event handler
   function handleEvent(event) {
      
-     // Emojis     
      //  Chats
-    const sendHelp 		= "𝙍𝙀:𝘽𝙊𝙏 dapat melakukan beberapa hal loh...\nCoba yuk command-command 𝙍𝙀:𝘽𝙊𝙏 berikut ini!\n\n\n/𝐡𝐞𝐥𝐩 - Untuk melihat command yang kami punya\n/𝐯𝐢𝐝𝐞𝐨𝐢𝐠 - Untuk menyimpan video dari instagram\n/𝐟𝐨𝐭𝐨𝐢𝐠 - Untuk menyimpan foto dari instagram\n/𝐜𝐞𝐤𝐢𝐠 - Untuk mengecek profil instagram\n/𝐬𝐭𝐨𝐫𝐲𝐢𝐠 - Untuk menyimpan foto atau video dari instastory\n/𝐚𝐛𝐨𝐮𝐭 - Untuk mengetahui lebih lanjut tentang 𝙍𝙀:𝘽𝙊𝙏\n\n\n\u2665";
+    const sendHelp 		= "𝙍𝙀:𝘽𝙊𝙏 dapat melakukan beberapa hal loh...\nCoba yuk command-command 𝙍𝙀:𝘽𝙊𝙏 berikut ini!\n\n\n/𝐡𝐞𝐥𝐩 - Untuk melihat command yang kami punya\n/𝐯𝐢𝐝𝐞𝐨𝐢𝐠 - Untuk menyimpan video dari instagram\n/𝐟𝐨𝐭𝐨𝐢𝐠 - Untuk menyimpan foto dari instagram\n/𝐜𝐚𝐩𝐭𝐢𝐨𝐧𝐢𝐠 - Untuk mengecek caption dari post di instagram\n/𝐛𝐢𝐨𝐢𝐠 - Untuk mengecek bio profil instagram\n/𝐩𝐫𝐨𝐟𝐢𝐥𝐢𝐠 - Untuk mengecek foto profil instagram\n/𝐬𝐭𝐨𝐫𝐲𝐢𝐠 - Untuk menyimpan foto atau video dari instastory\n/𝐚𝐛𝐨𝐮𝐭 - Untuk mengetahui lebih lanjut tentang 𝙍𝙀:𝘽𝙊𝙏\n\n\n\u2665";
     const tutorFoto	 	= "Begini nih cara menggunakan commandnya\n\n/fotoig (link post instagram)";
     const tutorVid 		= "Begini nih cara menggunakan commandnya\n\n/videoig (link post instagram)";
     const tutorStory 	= "Begini nih cara menggunakan commandnya\n\n/storyig (username instagram)";
-    const tutorCek 		= "Begini nih cara menggunakan commandnya\n\n/cekig (username instagram)";
+    const tutorCaption 		= "Begini nih cara menggunakan commandnya\n\n/captionig (link post instagram)";
+    const tutorCek 		= "Begini nih cara menggunakan commandnya\n\n/bioig (username instagram)";
+    const tutorPP 		= "Begini nih cara menggunakan commandnya\n\n/profilig (username instagram)";
     const errormess 	   = "Terima kasih atas pesannya\nSayang sekali, akun ini masih goblok";
     const sendIntro 	   =  "𝙍𝙀:𝘽𝙊𝙏 dapat melakukan beberapa hal loh..\nCoba yuk!\nKetik /help untuk melihat command-command yang kami punya.\n\n\u2605";
     const aboutMe 		= "𝙍𝙀:𝘽𝙊𝙏 adalah adalah chatbot yang dapat membantumu menyimpan foto maupun video dari Instagram.\n\n𝙍𝙀:𝘽𝙊𝙏 dibuat oleh:\n- [2201801636] Hans Nugroho Gianto Hadiwijaya\n- [2201758285] Casandra\n- [2201787915] Mita\n\n\n\uD83C\uDF6C";
@@ -72,11 +73,17 @@ app.get('/', (req, res) => {
                 case '/fotoig':
                     return replyText(event.replyToken, tutorFoto);
                     break;
+                case '/captionig':
+                    return replyText(event.replyToken, tutorCaption);
+                    break;
                 case '/storyig':
                     return replyText(event.replyToken, tutorStory);
                     break;
-                case '/cekig':
+                case '/bioig':
                     return replyText(event.replyToken, tutorCek);
+                    break;
+                case '/profilig':
+                    return replyText(event.replyToken, tutorPP);
                     break;
 		case '/echo':
 		    return replyText(event.replyToken, link);
@@ -96,11 +103,17 @@ app.get('/', (req, res) => {
                 case '/fotoig':
                     return replyText(event.replyToken, tutorFoto);
                     break;
+                case '/captionig':
+                    return replyText(event.replyToken, tutorCaption);
+                    break;
                 case '/storyig':
                     return replyText(event.replyToken, tutorStory);
                     break;
-                case '/cekig':
+                case '/bioig':
                     return replyText(event.replyToken, tutorCek);
+                    break;
+                case '/profilig':
+                    return replyText(event.replyToken, tutorPP);
                     break;
                 case '/about':
                     return replyText(event.replyToken, aboutMe);
